@@ -1,6 +1,6 @@
 # inception | 42 Common Core
 
-<h2> This is a System Administration related exercise. </h2>
+<p> This is a System Administration related exercise. </p>
 
 
 CONTEXT:
