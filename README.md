@@ -1,4 +1,4 @@
-This project has been created as part of the 42 curriculum by <uxmancis>
+This project has been created as part of the 42 curriculum by uxmancis.
 
 # inception | 42 Common Core
 
