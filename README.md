@@ -1,5 +1,5 @@
 # inception | 42 Common Core #
-## This is a System Administration related exercise. ## 
+## This is a System Administration related exercise.
 
 
 CONTEXT:
