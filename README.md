@@ -1,3 +1,7 @@
+# inception | 42 Common Core #
+## This is a System Administration related exercise. ## 
+
+
 CONTEXT:
 Let’s get introduced into what is an Operating System, why could we need to use various Operating Systems, and how can we actually get to work with various Operating Systems from 1 single computer device.
 
