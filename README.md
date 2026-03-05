@@ -1,7 +1,6 @@
 # inception | 42 Common Core
 
-# kaixo
-## This is a System Administration related exercise.
+<h1> This is a System Administration related exercise. <h1>
 
 
 CONTEXT:
