@@ -8,7 +8,7 @@ Let’s get introduced into what is an Operating System, why could we need to us
 
 Each computer has 1 Operating System
 About the Operating System (OS):
-What is it? It is a software program.
+* What is it? It is a software program.
 What does it do? It contains the instructions that…
 It offers the main user interface of the computer.
 It creates the Filesystem the computer will have.
