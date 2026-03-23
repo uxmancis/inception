@@ -4,17 +4,21 @@ echo "Starting WordPress setup..."
 
 cd /var/www/html
 
-# Clean folder
 rm -rf /var/www/html/*
 
-# Wait for MariaDB (robust)
 echo "Waiting for MariaDB..."
-sleep 10
+
+until mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e "SELECT 1" >/dev/null 2>&1; do
+    echo "Still waiting..."
+    sleep 2
+done
+
+echo "MariaDB is ready!"
 
 # Download WordPress
 wp core download --allow-root
 
-# Create config
+# Create config file
 wp config create \
     --dbname=${SQL_DATABASE} \
     --dbuser=${SQL_USER} \
@@ -32,7 +36,7 @@ wp core install \
     --skip-email \
     --allow-root
 
-# Create user
+# Create extra user (optional but recommended)
 wp user create ${WP_USER} ${WP_USER_EMAIL} \
     --role=author \
     --user_pass=${WP_USER_PASSWORD} \
@@ -44,5 +48,4 @@ chmod -R 755 /var/www/html
 
 echo "WordPress setup complete!"
 
-# Start PHP-FPM
 exec php-fpm8.2 -F
