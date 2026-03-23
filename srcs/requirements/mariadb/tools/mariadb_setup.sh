@@ -3,8 +3,9 @@
 mysqld_safe &
 
 echo "Waiting for MariaDB..."
-until mysqladmin ping --silent; do
-    sleep 1
+until mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e "SELECT 1" >/dev/null 2>&1; do
+    echo "Still waiting..."
+    sleep 2
 done
 
 mysql -u root -p${SQL_ROOT_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS ${SQL_DATABASE};"
