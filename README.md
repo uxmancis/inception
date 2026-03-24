@@ -5,9 +5,9 @@ _This project has been created as part of the 42 curriculum by uxmancis._
 ## Description:
 Docker is a technology that enables to pack an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
 
-This is a System Administration related exercise that has enabled me to get into containerization, as I've had to build my own containers and make them all work together.
+This is a System Administration exercise that allowed me to get into containerization, as I've had to build my own containers.
 
-As a result, we've got NGINX, Wordpress and MariaDB services working together.
+The setup includes: NGINX, WordPress and MariaDB, each service runs in its own container and communicates with the others, forming a functional web architecture.
 
 
 ## Instructions: 
