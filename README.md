@@ -9,9 +9,11 @@ This project has been created as part of the 42 curriculum by uxmancis.
 Let’s get introduced into what is an Operating System, why could we need to use various Operating Systems, and how can we actually get to work with various Operating Systems from 1 single computer device.
 
 ## Instructions: 
+
+* Clone the respository
 ```bash
-# Clone the respository
 git clone https://github.com/uxmancis/inception.git inception_uxu
+```
 
 # Build containers
 make 
