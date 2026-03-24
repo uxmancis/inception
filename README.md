@@ -10,18 +10,23 @@ Let’s get introduced into what is an Operating System, why could we need to us
 
 ## Instructions: 
 
-* Clone the respository
-```bash
+1. Clone the respository
+```bash 
 git clone https://github.com/uxmancis/inception.git inception_uxu
 ```
 
-# Build containers
-make 
+2. Build containers
+```bash 
+make
+```
 
-# Search in browser:
+3. Search in browser:
+```bash
 https://uxmancis.42.fr
+```
 
-# Clean up
+4. Clean up containers
+```bash
 make clean 
 ```
 
