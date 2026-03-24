@@ -32,6 +32,10 @@ make clean
 ```
 
 ## Resources:
+Here you have a few resources I'd like to share:
+* [Docker in 100 Seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ)
+
+AI has been a great companion when debugging incompatibilies across services and enabling proper communication between the containers.
 
 ## Project description: 
 
