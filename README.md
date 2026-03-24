@@ -3,7 +3,7 @@ _This project has been created as part of the 42 curriculum by uxmancis._
 # inception | 42 Common Core
 
 ## Description:
-Docker is a technology that enables to pack an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
+🐳 Docker is a technology that enables to pack an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
 
 This is a System Administration exercise that allowed me to get into containerization, as I've had to build my own containers.
 
