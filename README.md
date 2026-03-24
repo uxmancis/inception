@@ -5,9 +5,32 @@ This project has been created as part of the 42 curriculum by uxmancis.
 <p> This is a System Administration related exercise. </p>
 
 
-CONTEXT:
+## Description:
 Let’s get introduced into what is an Operating System, why could we need to use various Operating Systems, and how can we actually get to work with various Operating Systems from 1 single computer device.
 
+## Instructions: 
+```bash
+# Clone the respository
+git clone https://github.com/uxmancis/inception.git inception_uxu
+
+# Build containers
+make 
+
+# Search in browser:
+https://uxmancis.42.fr
+
+# Clean up
+make clean 
+```
+
+## Resources:
+
+## Project description: 
+
+* Virtual Machine vs Docker
+* Secrets vs Environment variables
+* Docker Network vs Host Network
+* Docker Volumes vs Bind Mounts
 
 Each computer has 1 Operating System
 About the Operating System (OS):
@@ -19,6 +42,8 @@ It contains the instructions that handle the hardware components of a computer.
 It manages computer resources: it decides which programs use the CPU and how much memory they will use.
 Where is the OS program? It is stored in Hard Drive Disk of the computer.
 Examples of Operating Systems: Windows, Linux, macOS, …
+
+
 
 
 
