@@ -33,7 +33,12 @@ make clean
 
 ## Resources:
 Here you have a few resources I'd like to share:
+* [How to Install Ubuntu Linux VM on a Mac (M1 / M2 / M3 / M4 / M5) with UTM!](https://www.youtube.com/watch?v=1PL-0-5BNXs)
 * [Docker in 100 Seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ)
+* [The Only Docker Tutorial You Need To Get Started](https://www.youtube.com/watch?v=DQdB7wFEygo)
+* [Virtualization Explained](https://www.youtube.com/watch?v=FZR0rG3HKIk)
+* [Containerization Explained](https://www.youtube.com/watch?v=0qotVMX-J5s)
+* [Virtual Machines vs Containers](https://www.youtube.com/shorts/bKtnt1yagEE)
 
 AI has been a great companion when debugging incompatibilies across services and enabling proper communication between the containers.
 
