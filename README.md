@@ -2,9 +2,6 @@ This project has been created as part of the 42 curriculum by uxmancis.
 
 # inception | 42 Common Core
 
-<p> This is a System Administration related exercise. </p>
-
-
 ## Description:
 Docker is a technology that enables to pack an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
 
