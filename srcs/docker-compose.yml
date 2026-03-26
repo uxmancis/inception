@@ -1,20 +1,20 @@
 services:
 
-  mariadb:
-    build: ./requirements/mariadb
+  mariadb: # Our DB server
+    build: ./requirements/mariadb #Dockerfile path: build image from your Dockerfile which is here
     container_name: mariadb
     env_file: .env
     restart: always
-    volumes:
+    volumes: #Where DB stores data
       - mariadb_data:/var/lib/mysql
-    networks:
+    networks: # Allows communication with WordPress
       - inception_network
 
-  wordpress:
+  wordpress: # Our Application
     build: ./requirements/wordpress
     container_name: wordpress
     env_file: .env
-    depends_on:
+    depends_on: #mariadb will start first
       - mariadb
     restart: always
     volumes:
@@ -25,19 +25,19 @@ services:
   nginx:
     build: ./requirements/nginx
     container_name: nginx
-    depends_on:
-      - wordpress
+    depends_on: #wordpress will start first
+      - wordpress 
     restart: always
     ports:
-      - "443:443"
+      - "443:443" #HTTPS, entrypoint from the internet
     volumes:
       - wordpress_data:/var/www/html
     networks:
       - inception_network
 
 networks:
-  inception_network:
+  inception_network: #private network for containers to talk with each other
 
-volumes:
+volumes: #makes sure data survives when container restarts
   mariadb_data:
   wordpress_data:
