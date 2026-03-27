@@ -1,10 +1,36 @@
+# 🐋 Docker rule:
+# 1 container = runs 1 main process
+#
+# and... we do have 2 steps:
+#       1) Step A
+#       2) Step B
+#
+# How can we run setup AND keep MariaDB running?
+# Solution:
+#   Start DB (mysqld_safe &) - MySQL running (background process)
+#   BUT keep script running - Script running (main process)
+
+
+
 #!/bin/bash
 
 echo "Starting MariaDB..."
+# MariaDB starts in the background:
+#   &: tempoorary, in the background
 
 mysqld_safe &
 
 # Wait for DB to be ready, before executing commands
+# 1. Hey MariaDB, are you running?
+# if yes, returns Success
+# if not, connection fails
+#
+# until... do : repeats until condition is true
+# it waits 2 seconds between attempts
+#       try ping -- fail
+#       try ping -- fail
+#       try ping -- success✅
+#       continues script
 until mysqladmin ping --silent; do
     echo "Waiting for MariaDB..."
     sleep 2
@@ -12,6 +38,7 @@ done
 
 echo "MariaDB is ready!"
 
+# DB Configuration:
 # Create DB + user. SQL Language to create DB.c
 # (Can be typed manually in Terminal if mariadb is installed) 
 # e.g.: CREATE USER 'bratz1'@'%' IDENTIFIED BY '123bratz';
@@ -41,8 +68,15 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';
 FLUSH PRIVILEGES;
 Script
 
-# Stop temp server
+# Stop temp server: "Tell MariaDB to stop"
+#
+# Before MariaDB was in background setup mode, that's not suitable for final container.
+# That's why...
+#       1) Shut the background process down
 mysqladmin -u root -p${SQL_ROOT_PASSWORD} shutdown
 
-# Start final server
+#       2) Start final server:
+# As Docker only cares about the main process,
+# MariaDB = main process, then container stays alive 🙌 
 exec mysqld_safe --bind-address=0.0.0.0
+# It does accept connections from anywhere, 0.0.0.0
