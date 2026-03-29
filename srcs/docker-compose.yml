@@ -1,7 +1,7 @@
 services:
 
   mariadb: # Our DB server
-    build: ./requirements/mariadb #Dockerfile path: build image from your Dockerfile which is here
+    build: ./mariadb #Dockerfile path: build image from your Dockerfile which is here
     container_name: mariadb
     env_file: .env
     restart: always
@@ -11,7 +11,7 @@ services:
       - inception_network
 
   wordpress: # Our Application
-    build: ./requirements/wordpress
+    build: ./wordpress
     container_name: wordpress
     env_file: .env
     depends_on: #mariadb will start first
@@ -23,7 +23,7 @@ services:
       - inception_network
 
   nginx:
-    build: ./requirements/nginx
+    build: ./nginx
     container_name: nginx
     depends_on: #wordpress will start first
       - wordpress 

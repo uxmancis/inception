@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 🐋 Docker rule:
 # 1 container = runs 1 main process
 #
@@ -11,8 +13,6 @@
 #   BUT keep script running - Script running (main process)
 
 
-
-#!/bin/bash
 
 echo "Starting MariaDB..."
 # MariaDB starts in the background:

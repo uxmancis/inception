@@ -2,7 +2,9 @@
 
 echo "Starting WordPress setup..."
 
-# Our WordPress is in /var/www/html. 
+# Our WordPress is in /var/www/html.
+# This is where we'll install wordpress (wp core download...)
+#  
 # Why? 
 #   - That's where nginx serves files from
 #   - PHP executes from there
