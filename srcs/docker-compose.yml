@@ -6,7 +6,7 @@ services:
     env_file: .env
     restart: always
     volumes: #Where DB stores data
-      - mariadb_data:/var/lib/mysql
+      - /home/uxmancis/data/mariadb:/var/lib/mysql
     networks: # Allows communication with WordPress
       - inception_network
 
@@ -18,7 +18,7 @@ services:
       - mariadb
     restart: always
     volumes:
-      - wordpress_data:/var/www/html
+      - /home/uxmancis/data/wordpress:/var/www/html
     networks:
       - inception_network
 
@@ -31,13 +31,9 @@ services:
     ports:
       - "443:443" #HTTPS, entrypoint from the internet
     volumes:
-      - wordpress_data:/var/www/html
+      - /home/uxmancis/data/wordpress:/var/www/html
     networks:
       - inception_network
 
 networks:
   inception_network: #private network for containers to talk with each other
-
-volumes: #makes sure data survives when container restarts
-  mariadb_data:
-  wordpress_data:
