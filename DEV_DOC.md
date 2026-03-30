@@ -74,4 +74,4 @@ The mountpoint will look like: /home/uxmancis/data/docker
 The volume path: /home/uxmancis/data/docker/volumes/mariadb_data/_data
 
 2) Manual verification: sudo ls /home/uxmancis/data/docker/volumes
-We should see: srcs_mariadb_data   srcs_wordpress_data
+We should see: srcs_mariadb_data   srcs_wordpress_data++
