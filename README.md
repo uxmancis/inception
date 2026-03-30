@@ -85,6 +85,10 @@ I've chosen to use environment variables combines with .gitignore, as subject re
 
 
 * Docker Network vs Host Network
+A Docker network is how containers talk to each other. In our project, that's in docker-compose.yml, networks: inception_network. I've created a custom network, as the subject requires the containers to run in isolation from the machine. The services this way communicate using service names through Docker's internal DNS.
+
+Host Network is an alternative networking mode, that we shouldn't have used in this project. It means the container uses host's network directly.
+
 
 
 * Docker Volumes vs Bind Mounts
