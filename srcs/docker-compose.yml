@@ -4,7 +4,7 @@ services:
     build: ./mariadb #Dockerfile path: build image from your Dockerfile which is here
     container_name: mariadb
     env_file: .env
-    restart: always
+    restart: always # to make sure containers do not stop in case of failure
     volumes: #Where DB stores data
       - mariadb_data:/var/lib/mysql
     networks: # Allows communication with WordPress
@@ -43,16 +43,22 @@ networks:
 # Our volumes, as required in the subject: 
 #   1.- Are named (no bind mounts)
 #   2.- Store their data inside /home/uxmancis/data
+#       Verification:
+#                1) docker info | grep "Docker Root Dir"
+#                 The mountpoint will look like: /home/uxmancis/data/docker
+#                                                /home/uxmancis/data/docker/volumes/mariadb_data/_data
+#                2) Manual verification: sudo ls /home/uxmancis/data/docker/volumes
+#                 We should see: srcs_mariadb_data   srcs_wordpress_data
+#
+# Other commands for volumes: 
+#     docker volume ls //List of volumes, once containers are running
+#     docker volume inspect srcs_mariadb_data //To check info, e.g.: mountpoint
+#
+# Docker named volumes, still in home. How? sudo nano /etc/docker/daemon.json.
+# Daemon (docker brain) is configured to store everything in /var/lib/docker.
+# By editing daemon.json we've told him to store everything in home.
+#   1.- sudo nano /etc/docker/daemon.json
+#   2.- sudo systemctl restart docker
 volumes: 
   mariadb_data: #named volume
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/uxmancis/data/mariadb #mapped to a specific host folder
   wordpress_data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/uxmancis/data/wordpress

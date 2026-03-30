@@ -81,6 +81,8 @@ Environment Variables are designed to be used for configuration (ports, modes, e
 | Not easily exposed                                | Can be visible in logs/processes  |
 | Managed by Docker or orchestration tools          | Defined in `.env` or compose file |
 
+I've chosen to use environment variables combines with .gitignore, as subject requires any credentials, API keys or passwords not to be in our git repository. Secrets are not mandatory to be used in the project.
+
 
 * Docker Network vs Host Network
 
@@ -93,3 +95,5 @@ A bind mound is when WE choose the exact folder on our machine. We tell Docker t
 That's why Docker Volumes are used for persistency and production-safe data. On the other hand, bind mounts are used for development and live file editing.
 
 The key difference is that volumes, docker owns the data. On bind mounts, we do own the data.
+
+We've configured daemon.json so that data is stored in home. It's not been managed in docker-compose.yml, but in daemon.json, the brain of Docker.
