@@ -39,7 +39,7 @@ Example:
 - Password: defined by WP_ADMIN_PASSWORD
 
 
-4. To stop the project: services:
+4. To stop the project:
 
 ```bash
 make clean
