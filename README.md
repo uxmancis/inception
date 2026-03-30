@@ -3,7 +3,7 @@ _This project has been created as part of the 42 curriculum by uxmancis._
 # inception | 42 Common Core
 
 ## Description:
-🐳 Docker is a technology that enables to pack an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
+🐳 Docker is a technology that enables to pack 📦 an application's code, libraries and dependencies, guaranteeing that it will run perfectly on any server in the world. It avoids "it worked on my machine" issue.
 
 This is a System Administration exercise that allowed me to get into containerization, as I've had to build my own containers.
 
@@ -42,30 +42,54 @@ Here you have a few resources I'd like to share:
 
 AI has been a great companion when debugging incompatibilies across services and enabling proper communication between the containers.
 
+
 ## Project description: 
+This project is built using [Docker](https://www.docker.com/), a containerization platform that allows applications to run in isolated environments called containers. Each service (e.g., web server, database) runs independently but communicates through a shared network.
 
-* Virtual Machine vs Docker
+The project includes:
+- Dockerfiles → define how each service is built
+- docker-compose.yml → orchestrates all services together
+- Volumes → persist data (e.g., database storage)
+- Networks → enable communication between containers
+
+🔧 Main design choices
+- Microservice architecture: each component runs in its own container
+- Isolation: services are decoupled (e.g., web server ≠ database)
+- Reproducibility: same environment across all machines
+- Portability: can run anywhere Docker is installed
+
+
+* Virtual Machine vs Docker: both are virtualization techniques.
+Docker enables lightweidht, portable, and reproducible environments.
+
+| Virtual Machines (VMs)   | Docker (Containers)       |
+| ------------------------ | ------------------------- |
+| Run full OS per instance | Share host OS kernel      |
+| Heavy (GBs)              | Lightweight (MBs)         |
+| Slow startup             | Fast startup              |
+| Strong isolation         | Process-level isolation   |
+| Managed via hypervisor   | Managed via Docker engine |
+
+
 * Secrets vs Environment variables
+Environment Variables are designed to be used for configuration (ports, modes, etc.). On the other hand, Secrets are designed to store sensitive data.
+
+| Secrets                                           | Environment Variables             |
+| ------------------------------------------------- | --------------------------------- |
+| Designed for sensitive data (passwords, API keys) | General configuration             |
+| Stored securely (encrypted / restricted access)   | Plain text (less secure)          |
+| Not easily exposed                                | Can be visible in logs/processes  |
+| Managed by Docker or orchestration tools          | Defined in `.env` or compose file |
+
+
 * Docker Network vs Host Network
+
+
 * Docker Volumes vs Bind Mounts
+A Docker Volume is a storage managed by Docker itself. Docker decides where: /var/lib/docker/volumes/volume_name/_data. We do NOT control de path. Docker manages lifecycle, permissions, etc. It's more portable and safe.
 
-Each computer has 1 Operating System
-About the Operating System (OS):
-* What is it? It is a software program.
-What does it do? It contains the instructions that…
-It offers the main user interface of the computer.
-It creates the Filesystem the computer will have.
-It contains the instructions that handle the hardware components of a computer.
-It manages computer resources: it decides which programs use the CPU and how much memory they will use.
-Where is the OS program? It is stored in Hard Drive Disk of the computer.
-Examples of Operating Systems: Windows, Linux, macOS, …
+A bind mound is when WE choose the exact folder on our machine. We tell Docker to use a specific folder on our computer. We do have full control. It's less portable, as it's not managed by Docker.
 
+That's why Docker Volumes are used for persistency and production-safe data. On the other hand, bind mounts are used for development and live file editing.
 
-
-
-
-
-
-Some users may need to have various Operating Systems:
-Software Exclusivity and Compatibility: many applications only work on a specific system.
-Developers: might be building an app for both iPhones and Androids, you need to test how it behaves on macoS and Linux/Windows environments to catch OS-specific bugs.
+The key difference is that volumes, docker owns the data. On bind mounts, we do own the data.

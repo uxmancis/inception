@@ -1,1 +1,2 @@
 .env
+# Command to make sure gitignore is ignoring .env: git check-ignore -v .env

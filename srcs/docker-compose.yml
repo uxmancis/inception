@@ -44,12 +44,12 @@ networks:
 #   1.- Are named (no bind mounts)
 #   2.- Store their data inside /home/uxmancis/data
 volumes: 
-  mariadb_data:
+  mariadb_data: #named volume
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/uxmancis/data/mariadb
+      device: /home/uxmancis/data/mariadb #mapped to a specific host folder
   wordpress_data:
     driver: local
     driver_opts:
