@@ -6,7 +6,7 @@
 #    By: uxmancis <uxmancis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/23 11:47:11 by uxmancis          #+#    #+#              #
-#    Updated: 2026/03/31 11:13:11 by uxmancis         ###   ########.fr        #
+#    Updated: 2026/03/31 11:16:44 by uxmancis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ all:
 		echo "👉 1. Create your own credentials:"; \
 		echo "    1.1.- Copy the content from .env.example:"; \
 		printf "$(CYAN)	cp srcs/.env.example srcs/.env$(RESET)\n"; \
-		echo "    1.2.- Define passwords"; \
+		echo "    1.2.- Set passwords in ⚙️ .env file📄"; \
 		echo ""; \
 		printf "👉 2. Run again: $(CYAN)make$(RESET)\n"; \
 		exit 1; \
