@@ -1,8 +1,6 @@
 # DEVELOPER DOCUMENTATION
 
-## ⚙️ 1. Environment Setup
-
-### 📌 Prerequisites
+## ⚙️ 1. Environment Setup, Prerequisites
 
 To run this project from scratch, the following are required:
 
@@ -26,9 +24,7 @@ To run this project from scratch, the following are required:
 - The `.env` file stores environment variables (credentials, domain, etc.)
 
 
-## 🔐 3. Configuration & Secrets
-
-### Environment Variables
+## 🔐 3. Configuration & Secrets, Environment Variables
 All configuration values are defined in: srcs/.env
 Examples:
 
@@ -36,13 +32,7 @@ Examples:
 - WordPress admin credentials
 - Domain name
 
-Secrets:
-Sensitive data (e.g., database passwords) should not be hardcoded.
-
-They can be:
-- Stored in `.env` (mandatory)
-- Optionally stored in a `secrets/` directory (recommended)
-⚠️ No credentials must be present in Dockerfiles or committed publicly.
+.env is not submitted to repository.
 
 ## 🚀 4. Build and Launch the Project
 
