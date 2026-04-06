@@ -17,7 +17,6 @@
 echo "Starting MariaDB..."
 # MariaDB starts in the background:
 #   &: tempoorary, in the background
-
 mysqld_safe &
 
 # Wait for DB to be ready, before executing commands

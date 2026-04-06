@@ -45,7 +45,7 @@ wp core install \
     --skip-email \
     --allow-root
 
-# 4.- Create extra user (optional but recommended)
+# 4.- Create extra user
 wp user create ${WP_USER} ${WP_USER_EMAIL} \
     --role=author \
     --user_pass=${WP_USER_PASSWORD} \
